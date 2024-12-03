@@ -9,7 +9,9 @@ const UserContext = React.createContext();
 axios.defaults.withCredentials = true;
 
 export const UserContextProvider = ({ children }) => {
-  const serverUrl = "http://localhost:8000";
+  const serverUrl = 
+ "https://taskyfier-backend.onrender.com"
+  // "http://localhost:8001";
 
   const router = useRouter();
 
@@ -50,7 +52,7 @@ export const UserContextProvider = ({ children }) => {
       router.push("/login");
     } catch (error) {
       console.log("Error registering user", error);
-      toast.error(error.response.data.message);
+      toast.error(error.response?.data.message);
     }
   };
 
